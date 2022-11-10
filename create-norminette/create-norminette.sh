@@ -1,7 +1,7 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    önyükle.sh                                         :+:      :+:    :+:    #
+#    create-norminette.sh                               :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: hece  <hece@student.42kocaeli.com.tr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
@@ -12,14 +12,16 @@
 
 #!/bin/bash
 
-# Windows ve linux u aynı anda kurdugunuzda 
-# ortaya çıkan boot sorununu çözmek için
-# yazmış oldugum küçük bir script oldukça basit
-# öyle değil mi 
+# Ecole 42 deki syntax kurallarını denetleyen norminette ismindeki
+# yapay zekayı indirmek için bu scripti kullanabilirsiniz
 
-# ÖNEMLİ NOT README Yİ OKUYUNUZ
+echo "Kuruluma hoşgeldiniz sudo şifrenizi giriniz"
+sudo apt install pip
 
-echo "sudo şifrenizi giriniz!"
-sudo grub-mkconfig -o /boot/grub/grub.cfg
-echo "işlem tamamlandı!"
-echo "Yeniden başlatarak sonuçları görebilirsiniz"
+echo "pip indi sıra toollarda"
+sudo python3 -m pip install --upgrade pip setuptools
+
+echo "toollar indi artık sıra norminetteyi indirmekte"
+sudo pip3 install norminette
+
+echo "işlemler tamamlandı çalıştırmak için (norminette dosya_adı) yazabilirsiniz"
